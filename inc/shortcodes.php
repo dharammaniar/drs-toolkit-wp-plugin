@@ -73,7 +73,6 @@ function drstk_add_tile_gallery(){
     wp_send_json($data);
     wp_die();
 }
-add_action( 'wp_ajax_get_tile_code', 'drstk_add_tile_gallery' ); //for auth users
 
 function thickbox_styles() {
    echo '<style type="text/css">
