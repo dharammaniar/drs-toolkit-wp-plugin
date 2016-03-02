@@ -1,6 +1,5 @@
 <?php
-add_action( 'wp_ajax_get_breadcrumb', 'breadcrumb_ajax_handler' ); //for auth users
-add_action( 'wp_ajax_nopriv_get_breadcrumb', 'breadcrumb_ajax_handler' ); //for nonauth users
+
 function breadcrumb_ajax_handler() {
   // Handle the ajax request
   $collection = drstk_get_pid();

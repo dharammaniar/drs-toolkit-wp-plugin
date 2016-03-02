@@ -42,8 +42,16 @@ $TEMPLATE_THEME = array(
  $all_assoc_meta_options = array("Title","Creator","Abstract/Description");
  $facet_options = array("creator_sim", "creation_year_sim", "subject_sim", "type_sim", "community_name_ssim", "drs_department_ssim", "drs_degree_ssim", "drs_course_number_ssim", "drs_course_title_ssim");
  $niec_facet_options = array("niec_gender_ssim", "niec_age_ssim", "niec_race_ssim", "niec_sign_pace_ssim", "niec_fingerspelling_extent_ssim", "niec_fingerspelling_pace_ssim", "niec_numbers_pace_ssim", "niec_numbers_extent_ssim", "niec_classifiers_extent_ssim", "niec_use_of_space_extent_ssim", "niec_how_space_used_ssim", "niec_text_type_ssim", "niec_register_ssim", "niec_conversation_type_ssim", "niec_audience_ssim", "niec_signed_language_ssim");
- 
+
  add_action( 'wp_ajax_get_tile_code', 'drstk_add_tile_gallery' ); //for auth users
+ add_action( 'wp_ajax_get_breadcrumb', 'breadcrumb_ajax_handler' ); //for auth users
+ add_action( 'wp_ajax_nopriv_get_breadcrumb', 'breadcrumb_ajax_handler' ); //for nonauth users
+ add_action( 'wp_ajax_get_browse', 'browse_ajax_handler' ); //for auth users
+ add_action( 'wp_ajax_nopriv_get_browse', 'browse_ajax_handler' ); //for nonauth users
+ add_action('wp_ajax_wp_search', 'ajax_wp_search');
+ add_action('wp_ajax_nopriv_wp_search', 'ajax_wp_search');
+ add_action( 'wp_ajax_get_item_admin', 'item_admin_ajax_handler' ); //for auth users
+
 
  /**
   * Rewrite rules for the plugin.

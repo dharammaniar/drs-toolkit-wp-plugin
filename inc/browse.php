@@ -1,6 +1,5 @@
 <?php
-add_action( 'wp_ajax_get_browse', 'browse_ajax_handler' ); //for auth users
-add_action( 'wp_ajax_nopriv_get_browse', 'browse_ajax_handler' ); //for nonauth users
+
 function browse_ajax_handler() {
   // Handle the ajax request
   global $errors;
@@ -45,8 +44,7 @@ function browse_ajax_handler() {
   }
 }
 
-add_action('wp_ajax_wp_search', 'ajax_wp_search');
-add_action('wp_ajax_nopriv_wp_search', 'ajax_wp_search');
+
 function ajax_wp_search(){
   global $wp_query;
   global $paged;

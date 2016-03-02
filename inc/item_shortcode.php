@@ -73,7 +73,6 @@ function drstk_item( $atts ){
   return $img_html;
 }
 
-add_action( 'wp_ajax_get_item_admin', 'item_admin_ajax_handler' ); //for auth users
 function item_admin_ajax_handler() {
   $data = array();
   // Handle the ajax request
