@@ -41,6 +41,7 @@ function browse_ajax_handler() {
     }
     $data = get_response($url);
     wp_send_json($data);
+    wp_die();
   }
 }
 
